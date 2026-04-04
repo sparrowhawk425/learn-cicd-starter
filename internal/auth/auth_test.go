@@ -31,6 +31,6 @@ func TestApiKey(t *testing.T) {
 	// Invalid Missing Auth Header
 	headers = http.Header{}
 	apiKey, err = GetAPIKey(headers)
-	require.NoError(t, err)
+	require.Error(t, err)
 	require.Empty(t, apiKey)
 }
